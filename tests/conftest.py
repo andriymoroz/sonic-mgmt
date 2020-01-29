@@ -65,6 +65,8 @@ def pytest_addoption(parser):
     # test_vrf options
     parser.addoption("--vrf_capacity", action="store", default=None, type=int, help="vrf capacity of dut (4-1000)")
     parser.addoption("--vrf_test_count", action="store", default=None, type=int, help="number of vrf to be tested (1-997)")
+    parser.addoption("--max_lane_speed", action="store", default="25000",
+                     help="For testing ports speed. Default value is 25000. Add only in case of differ value.")
 
 @pytest.fixture(scope="session")
 def testbed(request):
